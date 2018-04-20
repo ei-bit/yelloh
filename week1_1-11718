@@ -1,0 +1,13 @@
+#include <stdio.h>
+
+int main() {
+	char str[101];
+
+	while (scanf("%[^\n]",str)!=-1) {
+		getchar();
+		puts(str);
+	}
+	return 0;
+}
+//gets 함수 보안취약
+//백줄, 백글자, 공백으로 시작끝x, 빈줄x
