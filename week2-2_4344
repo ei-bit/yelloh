@@ -1,7 +1,7 @@
 #include <stdio.h>
 int main() {
 	int C, N, i, sum, cnt, a[1000];
-	float av;
+	double av;
 	scanf("%d", &C);
 	while (C--) {
 		scanf("%d", &N);
@@ -9,10 +9,10 @@ int main() {
 				scanf("%d", &a[i]);
 				sum += a[i];
 			}
-		av = (float)sum / (float)N;
+		av = (double)sum / (double)N;
 		for (i = 0, cnt = 0; i < N; i++)
 			if (a[i] > av) cnt++;
-		printf("%.3f%%\n", ((float)cnt / N)*100.0);
+		printf("%.3lf%%\n", ((double)cnt / N)*100.0);
 	}
 	return 0;
 }
