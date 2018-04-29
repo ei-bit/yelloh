@@ -1,0 +1,12 @@
+#include <stdio.h>
+int main() {
+	int a, n, C=1;
+	scanf("%d", &a);
+	n = (a % 10) * 10 + (a / 10 + a % 10) % 10;
+	while (n != a) {
+		n = (n % 10) * 10 + (n / 10 + n % 10) % 10;
+		C++;
+	} 
+	printf("%d\n", C);
+	return 0;
+}
