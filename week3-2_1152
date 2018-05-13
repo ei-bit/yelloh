@@ -1,0 +1,16 @@
+#include <stdio.h>
+#define N (a[i] != ' '&&a[i] != '\n'&&a[i] != '\0')
+int main(void)
+{
+	int i, flag = -1, count = 0;
+	char a[1000002];
+	scanf("%[^\n]s", a);
+
+	for (i = 0; a[i] != '\0'; i++) {
+		if (N&& flag == -1) { flag *= -1; count++; }//글자등장
+		if (!N && flag == 1) flag *= -1;
+	}
+
+	printf("%d\n", count);
+	return 0;
+}
