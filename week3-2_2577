@@ -1,0 +1,12 @@
+#include <stdio.h>
+
+int main(void)
+{
+	int i,T[10] = {0}, a, b, c, r;
+	scanf("%d %d %d", &a, &b, &c);
+	r = a*b*c;
+	for (; r > 0; T[r%10]++, r /= 10);
+	for (i = 0; i < 10; i++)
+		printf("%d\n", T[i]);
+	return 0;
+}
