@@ -1,0 +1,12 @@
+#include <stdio.h>
+
+int main(void)
+{
+	int a, b, A, B;
+	scanf("%d %d", &a, &b);
+	A += a / 100 + (a % 10) * 100 + ((a % 100) - (a % 10));
+	B += b / 100 + (b % 10) * 100 + ((b % 100) - (b % 10));
+	if (A > B) printf("%d", A);
+	else printf("%d", B);
+	return 0;
+}
