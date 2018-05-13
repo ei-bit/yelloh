@@ -1,0 +1,16 @@
+#include <stdio.h>
+
+int main(void)
+{
+	int i,al[26];
+	char t[101];
+	scanf("%s", &t);
+	for (i = 0; i < 26; i++)
+		al[i] = -1;
+	for (i = 0; t[i] != '\0'; i++) {
+		if (al[t[i] - 97] == -1) al[t[i] - 97] = i;
+	}
+	for (i = 0; i < 26; i++)
+		printf("%d ", al[i]);
+	return 0;
+}
