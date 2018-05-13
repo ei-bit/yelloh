@@ -1,0 +1,22 @@
+#include <stdio.h>
+
+int func(int);
+int main() {
+	int a, b, r=0, i;
+	scanf("%d", &a);
+	if (a/100==0) r = a;
+	else {
+		for (i = 100; i <= a; i++) {
+			if (func(i)) r++;
+		}
+		r += 99;
+	}
+	printf("%d\n", r);
+	return 0;
+}
+
+int func(int i)
+{
+	bool b = (i / 100 - ((i % 100) / 10)) == ((i % 100) / 10 - i % 10);
+	return b;
+}
