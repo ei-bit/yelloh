@@ -1,0 +1,52 @@
+#include <stdio.h>
+#include <math.h>
+int SOD(int);
+int main() {
+	int idx, sod, temp, di, sav, dr, dra, alpah, flag;
+
+	for (idx = 1; idx <= 10000; idx++) {
+		sod=SOD(idx);
+		dr = (idx - 1) % 9 + 1;
+		dra = dr % 2 ? ((dr + 9) / 2) : (dr / 2);
+		for (flag = 0, di = 0; (di <= log(idx) + 1) && (flag == 0); di++) {
+			alpah = floor(idx - dra - 9 * di);
+			sod=SOD(alpah);
+			sav = alpah + sod;
+			if (sav == idx) flag = 1;
+		}
+		if (flag == 0) printf("%d\n", idx);
+	}
+	return 0;
+}
+
+int SOD(int idx)
+{
+	int temp, sod;
+	for (temp = idx, sod = 0; temp > 0; sod += temp % 10, temp /= 10);
+	return sod;
+}
+
+
+
+/*
+#include <stdio.h>
+#include <math.h>
+#define SOD(idx) for(temp = idx, sod = 0 ; temp > 0 ; sod += temp % 10, temp /= 10)
+int main() {
+	int idx, sod, temp, di, sav, dr, dra, alpah, flag;
+
+	for (idx = 1; idx <= 10000; idx++) {
+		SOD(idx);
+		dr = (idx - 1) % 9 + 1;
+		dra = dr % 2 ? ((dr + 9) / 2) : (dr / 2);
+		for (flag=0, di = 0; (di <= log(idx) + 1)&&(flag==0); di++) {
+			alpah = floor(idx - dra - 9 * di);
+			SOD(alpah);
+			sav = alpah + sod;
+			if(sav==idx) flag = 1;
+		}
+		if (flag==0) printf("%d\n", idx);
+	}
+	return 0;
+}
+*/
