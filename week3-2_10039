@@ -1,0 +1,13 @@
+#include <stdio.h>
+
+int main(void)
+{
+	int i,T[5], r=0;
+	scanf("%d %d %d %d %d", &T[0], &T[1], &T[2], &T[3], &T[4]);
+	for (i = 0; i < 5; i++) {
+		if (T[i] < 40) T[i] = 40;
+		r += T[i];
+	}
+	printf("%d\n", r/5);
+	return 0;
+}
