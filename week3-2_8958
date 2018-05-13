@@ -1,0 +1,19 @@
+#include <stdio.h>
+#define N(k) for(j=1 ; j<=k ; r+=j,j++)
+int main(void)
+{
+	int i, j, t, of, r;
+	char T[80];
+	scanf("%d%*[^\n]", &t);
+	while (t--) {
+		scanf("%s", T);
+		for (i = 0, of=0, r=0; T[i] != '\0'; i++) {
+			if (T[i] == 'O') { of++; }
+			else if (T[i] == 'X'&&of != 0) { N(of); of = 0; }
+			if (T[i + 1] == '\0'&&of != 0) N(of);
+		}
+		printf("%d\n", r);
+	}
+	
+	return 0;
+}
