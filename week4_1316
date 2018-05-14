@@ -1,0 +1,23 @@
+#include <stdio.h>
+
+int main(void)
+{
+	int i, t, alpah[26] = { 0 }, flag=0, num=0;
+	char T[101];
+	scanf("%d%*[^\n]", &t);
+	while (t--) {
+		scanf("%s", T);
+		for (i = 0; T[i] != '\0'; i++) {
+			if (alpah[T[i] - 97] == 0) { alpah[T[i] - 97] = i+1; }
+			else if (alpah[T[i] - 97] == i) { alpah[T[i] - 97] = i+1; }
+			else { flag = 1; break; }
+		}
+		for (i = 0; i < 26; i++)
+			alpah[i] = 0;
+
+		if (!flag) num++;
+		flag = 0;
+	}
+	printf("%d\n", num);
+	return 0;
+}
