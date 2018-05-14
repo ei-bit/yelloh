@@ -1,0 +1,23 @@
+#include <stdio.h>
+//2=3초 9=10초
+int main(void)
+{
+	int i, t;
+	char T[16];
+	scanf("%s", T);
+	for (i = 0, t=0; T[i] != '\0'; i++) {
+		if (T[i] == 1) t += 2;
+		else if (T[i] < 68) t += 3;
+		else if (T[i] < 71) t += 4;
+		else if (T[i] < 74) t += 5;
+		else if (T[i] < 77) t += 6;
+		else if (T[i] < 80) t += 7;
+		else if (T[i] < 84) t += 8;
+		else if (T[i] < 87) t += 9;
+		else t += 10;
+	}
+
+	printf("%d\n",t);
+
+	return 0;
+}
