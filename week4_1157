@@ -1,0 +1,23 @@
+#include <stdio.h>
+//A=65 a=97 32차이
+int main(void)
+{
+	int i, alpah[26] = { 0 }, max, d;
+	char T[1000001];
+	scanf("%s", T);
+	for (i = 0; T[i] != '\0'; i++) {
+		if (T[i] < 97) { alpah[T[i] - 65]++; }
+		else if (T[i] >= 97) { alpah[T[i] - 97]++; }
+	}
+	for (i = 0, max = -1; i < 26; i++) {
+		if (!alpah[i]) continue;
+		else if (alpah[max] > alpah[i]) continue;
+		else if (alpah[max] < alpah[i]) { max = i; d = 0; }
+		else if (alpah[max] == alpah[i]) d = 1;
+	}
+
+	if(!d) printf("%c\n", max+65);
+	else printf("?\n");
+
+	return 0;
+}
