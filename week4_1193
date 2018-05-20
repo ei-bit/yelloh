@@ -1,0 +1,15 @@
+#include <stdio.h>
+
+int main() {
+	int i, tp=0, a;
+	scanf("%d", &a);
+
+	for(i=1 ; a>tp ; i++){
+		tp = (i*i + i) / 2;
+	}
+	a = a - tp + i - 1;
+
+	if(i%2==1) printf("%d/%d\n", a, i - a);
+	else printf("%d/%d\n", i - a, a);
+	return 0;
+}
