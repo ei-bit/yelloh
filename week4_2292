@@ -1,0 +1,17 @@
+#include <stdio.h>
+
+int main() {
+	int i, tp=0;
+	double a;
+	scanf("%lf", &a);
+
+	a -= 1.0;
+	a /= 6.0;
+
+	for(i=0 ; a>tp ; i++){
+		tp = (i*i + i) / 2;
+	}
+	if (a == 0) i = 1;
+	printf("%d\n", i);
+	return 0;
+}
