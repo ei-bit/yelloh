@@ -1,0 +1,19 @@
+#include <stdio.h>
+
+int main(void) {
+	int t, fl, rm, man, i;
+	scanf("%d", &t);
+
+	while (t--) {
+		scanf("%d\n%d", &fl, &rm);
+
+		for (i = 0, man = 1; i <= fl; i++) {
+			man *= (rm + i);
+			man /= (i + 1);
+		}
+
+		printf("%d\n", man);
+	}
+
+	return 0;
+}
