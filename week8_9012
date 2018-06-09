@@ -1,0 +1,33 @@
+#include <stdio.h>
+
+int top = -1;
+char list[51];
+
+int main(void) {
+	int t, i, j, k;
+	char str[51];
+	scanf("%d", &t);
+	while (getchar() != '\n');
+
+	while (t--) {
+		scanf("%[^\n]s", str);
+		while (getchar() != '\n');
+		for (i = 0; str[i] != '\0'; top = i, i++);
+		for (i = top, j = 0; i >= 0; i--)
+			list[j++] = str[i];
+		if (list[top] == ')' || list[0] == '(') {
+			printf("NO\n"); continue;
+		}
+		i = 0; j = 0; k = top;
+		while(i>=j&&top>-1){
+			if (list[top] == '(') i++;
+			else if (list[top] == ')') j++;
+			top--;
+		}
+		if (i==j&&top==-1) printf("YES\n");
+		else printf("NO\n");
+
+	}
+
+	return 0;
+}
