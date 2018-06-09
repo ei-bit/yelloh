@@ -31,3 +31,6 @@ int main(void) {
 
 	return 0;
 }
+//백준에서 fflush사용말것
+//gcc환경 채점 
+//	while (getchar() != '\n');
